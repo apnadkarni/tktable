@@ -55,4 +55,4 @@ foreach file [lsort [::tcltest::getMatchingFiles]] {
 # cleanup
 puts $chan "\nTests ended at [eval $timeCmd]"
 ::tcltest::cleanupTests 1
-exit
+#exit

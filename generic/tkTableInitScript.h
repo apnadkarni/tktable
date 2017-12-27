@@ -26,9 +26,11 @@ static char tkTableInitScript[] = "if {[info proc tkTableInit]==\"\"} {\n\
     }\n\
     if {[info exists env(TK_TABLE_LIBRARY)]} {\n\
 	lappend dirs $env(TK_TABLE_LIBRARY)\n\
-    }\n\
-    lappend dirs " TBL_RUNTIME_DIR "\n\
-    if {[info exists tcl_pkgPath]} {\n\
+    }\n"
+#ifndef _WIN32 /* On Windows, ridiculous to define runtime dir at build time */
+    "lappend dirs " TBL_RUNTIME_DIR "\n"
+#endif
+    "if {[info exists tcl_pkgPath]} {\n\
 	foreach i $tcl_pkgPath {\n\
 	    lappend dirs [file join $i Tktable" PACKAGE_VERSION "] \\\n\
 		[file join $i Tktable] $i\n\
