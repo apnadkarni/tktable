@@ -1,3 +1,7 @@
+**THIS REPOSITORY IS NO LONGER MAINTAINED**
+
+For current releases of TkTable, see https://github.com/bohagan1/TkTable.
+
 /*
  * Conceptually based on Tk3 table widget by Roland King (rols@lehman.com)
  *
